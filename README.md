@@ -1,4 +1,4 @@
-# Kannada MNIST — Classification de chiffres manuscrits
+#  Kannada MNIST — Classification de chiffres manuscrits
 
 ## Objectif
 
