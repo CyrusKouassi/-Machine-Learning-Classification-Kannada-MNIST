@@ -1,60 +1,44 @@
-# Kannada MNIST - Classification de chiffres manuscrits
+# Kannada MNIST — Classification de chiffres manuscrits
 
-Ce projet consiste à développer un modèle de Machine Learning capable de classifier des chiffres manuscrits (0 à 9) issus du dataset Kannada MNIST. L’objectif est de mettre en place une pipeline complète allant de l’analyse exploratoire des données jusqu’à l’optimisation des modèles de classification.
+## Objectif
 
-## Objectifs du projet
+Ce projet a pour objectif de développer un modèle de Machine Learning capable de classifier des chiffres manuscrits (0 à 9) issus du dataset Kannada MNIST. Il s’inscrit dans une démarche complète de modélisation incluant l’exploration des données, le prétraitement, la réduction de dimension, l’entraînement de modèles supervisés ainsi que l’optimisation des hyperparamètres.
 
-- Explorer et comprendre la structure des données
-- Prétraiter les données (normalisation, mise à l’échelle)
-- Réduire la dimension avec PCA
-- Implémenter plusieurs modèles de classification
-- Optimiser les hyperparamètres
-- Comparer les performances des modèles
+L’ambition du projet est de comparer différentes approches de classification et d’évaluer leur performance afin d’identifier le modèle le plus robuste et le plus performant.
+
+## Jeu de données
+
+Le dataset Kannada MNIST est une alternative au MNIST classique et contient des représentations numériques d’images de chiffres manuscrits. Les données sont fournies sous forme de fichiers `train.csv` et `test.csv`, dans lesquels chaque ligne correspond à une image transformée en vecteur de pixels.
+
+Les fichiers de données ne sont pas inclus dans ce dépôt. Ils doivent être placés dans le dossier `data/` avant l’exécution du notebook.
 
 ## Méthodologie
 
-### Analyse exploratoire (EDA)
-- Visualisation des distributions
-- Vérification des classes
-- Analyse des corrélations
+La première étape du projet consiste en une analyse exploratoire des données afin de comprendre leur structure et la distribution des classes. Un travail de prétraitement est ensuite réalisé pour normaliser et préparer les variables en vue de l’apprentissage.
 
-### Prétraitement
-- Standardisation des variables
-- Réduction de dimension via PCA
-- Séparation train / validation
+Une réduction de dimension par Analyse en Composantes Principales (PCA) est appliquée afin de compresser l’information, réduire le bruit et améliorer l’efficacité computationnelle des modèles.
 
-### Modélisation
-Les modèles testés :
+Deux modèles de classification supervisée sont ensuite implémentés : un Support Vector Machine (SVM) et un Random Forest. Une procédure d’optimisation des hyperparamètres via GridSearchCV est utilisée afin d’améliorer les performances et de sélectionner la meilleure configuration.
 
-- Support Vector Machine (SVM)
-- Random Forest
+Les performances sont évaluées principalement à l’aide de la métrique d’accuracy et d’une comparaison entre les modèles testés.
 
-Optimisation via RandomizedSearchCV.
+## Résultats
 
+Les modèles SVM et Random Forest sont comparés sur la base de leurs performances en validation. L’impact de la réduction de dimension sur la précision et le temps d’entraînement est analysé. Le modèle final retenu correspond à celui présentant le meilleur compromis entre performance prédictive et stabilité.
 
-## Évaluation des performances
+## Technologies
 
-- Accuracy
-- Comparaison des scores validation
-- Sélection du meilleur modèle
-  
-## Technologies utilisées
+Ce projet a été réalisé en Python en utilisant les bibliothèques NumPy, Pandas, Matplotlib, Seaborn et Scikit-learn.
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-learn
+## Organisation du dépôt
 
-## Données 
-Le projet nécessite :
+Le dépôt contient le notebook principal `Kannada MNIST.ipynb`, un fichier `requirements.txt` listant les dépendances nécessaires, un fichier `.gitignore` ainsi qu’un dossier `data/` destiné à contenir les fichiers de données.
 
-- train.csv
-- test.csv
+## Exécution
 
-Les fichiers ne sont pas inclus dans ce repository.
+Après installation des dépendances via `pip install -r requirements.txt`, les fichiers `train.csv` et `test.csv` doivent être placés dans le dossier `data/`. Le projet peut ensuite être exécuté en ouvrant le notebook `Kannada MNIST.ipynb` et en lançant les cellules séquentiellement.
 
-Télécharger le dataset depuis Kaggle et placer les fichiers dans le dossier `data/`.
+## Remarques
 
+Ce projet met en œuvre une pipeline complète de Machine Learning et illustre la structuration d’un workflow reproductible allant de l’analyse des données à l’optimisation de modèles supervisés.
 
